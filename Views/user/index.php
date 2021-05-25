@@ -13,6 +13,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><a href="?controller=user&method=show"><i class="fa fa-users"></i> Ver Usuarios</a></li>
                             <li><a href="?controller=profesor&method=show"><i class="fa fa-suitcase"></i> Ver Profesores</a></li>
+                            <li><a href="?controller=student&method=show"><i class="fa fa-pencil"></i>Ver alumnos</a></li>
                             <li><a href="?controller=curse&method=show"><i class="fa fa-book"></i> Ver Cursos</a></li>
                         </ul>
                     </li>

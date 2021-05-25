@@ -1,6 +1,6 @@
 <?php
 
-class studentController{
+class studentController extends Student{
     public function __construct()
     {
         
@@ -8,12 +8,14 @@ class studentController{
 
     public function index()
     {
-
+        require_once "Views/layouts/header.php";
+        require_once "Views/student/index.php";
+        require_once "Views/layouts/footer.php";
     }
 
     public function show(){
         require_once "Views/layouts/header.php";
-        require_once "Views/student/showprofesor.php";
+        require_once "Views/student/showstudent.php";
         require_once "Views/layouts/footer.php";
     }
 
@@ -36,5 +38,10 @@ class studentController{
     }
 
     public function delete(){
+    }
+
+    public function store(){
+        parent::agregarAlumno($_POST);
+        header('location:?controller=student&method=show');
     }
 }

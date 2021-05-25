@@ -12,21 +12,22 @@ class Student
         }
     }
 
-    public function agregarProfesor($data)
+    public function agregarAlumno($data)
     {
         try {
-            $result = Database::connect()->prepare("INSERT INTO tb_alumno (id, nombre, appat, apmat, estado) VALUES (NULL,?,?,?,'1')");
+            $result = Database::connect()->prepare("INSERT INTO tb_alumno (id, nombre, appat, apmat, telefono, estado) VALUES (NULL,?,?,?,'1')");
             $result->bindParam(1, $data['nombre'], PDO::PARAM_STR);
             $result->bindParam(2, $data['appat'], PDO::PARAM_STR);
             $result->bindParam(3, $data['apmat'], PDO::PARAM_STR);
-            $result->bindParam(4, $data['estado'], PDO::PARAM_STR);
+            $result->bindParam(4, $data['telefono'], PDO::PARAM_STR);
+            $result->bindParam(5, $data['estado'], PDO::PARAM_STR);
             return $result->execute();
         } catch (Exception $e) {
             die("Error User->agregarUsuario()" . $e->getMessage());
         }
     }
 
-    public function consultarProfesor($id)
+    public function consultarAlumno($id)
     {
         try {
             $result = Database::connect()->prepare("SELECT * FROM tb_alumno WHERE id = ?");
@@ -39,7 +40,7 @@ class Student
         }
     }
 
-    public function modificarProfesor($data)
+    public function modificarAlumno($data)
     {
         try {
             $result = Database::connect()->prepare("UPDATE tb_alumno SET nombre = ?, appat = ?, apmat= ? WHERE id = ?");

@@ -4,8 +4,8 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <strong>Agregar </strong> curso
-                    <a href="?controller=curse&method=show" class="btn btn-outline-primary">Volver</a>
+                    <strong>Agregar </strong> alumno
+                    <a href="?controller=student&method=show" class="btn btn-outline-primary">Volver</a>
                 </div>
                 <div class="card-body card-block">
                     <form action="?controller=curse&method=store" method="post" class="form-horizontal">
